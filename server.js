@@ -1,6 +1,8 @@
 'use strict'
 
 require('dotenv').config();
+const handleError = require('./errorhandlers/500');
+const handleNotFound = require('./errorhandlers/404');
 const express = require('express');
 const cors = require('cors');
 const app = express();
@@ -11,6 +13,8 @@ app.get('/', (req, res, next) => {
   res.send('Server Live');
 });
 
+app.use('*', handleNotFound);
+app.use(handleError);
 
 module.exports = {
   app,
