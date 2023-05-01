@@ -1,23 +1,25 @@
 'use strict'
 
 require('dotenv').config();
-const handleError = require('./src/errorhandlers/500');
-const handleNotFound = require('./src/errorhandlers/400');
-const weatherAPI = require('./src/middleware/weatherapi')
+const handleError = require('./errorhandlers/500');
+const handleNotFound = require('./errorhandlers/400');
+const getWeeklyWeather  = require('./getWeather')
 const express = require('express');
 const cors = require('cors');
-const app = express();
+// const prompt = require('prompt-sync')();
 
-app.use(express.json());
+const app = express();
 app.use(cors());
+app.use(express.json());
 
 app.get('/', (req, res, next) => {
   res.send('Server Live');
 });
 
+app.get('/weather', getWeeklyWeather);
+
 app.use('*', handleNotFound);
 app.use(handleError);
-app.get('/weather', weatherAPI);
 
 module.exports = {
   app,
