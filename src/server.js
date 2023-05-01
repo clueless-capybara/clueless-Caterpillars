@@ -3,7 +3,7 @@
 require('dotenv').config();
 const handleError = require('./errorhandlers/500');
 const handleNotFound = require('./errorhandlers/400');
-const getWeeklyWeather  = require('./getWeather')
+const getCity = require('./getCityWeather')
 const express = require('express');
 const cors = require('cors');
 // const prompt = require('prompt-sync')();
@@ -16,7 +16,9 @@ app.get('/', (req, res, next) => {
   res.send('Server Live');
 });
 
-app.get('/weather', getWeeklyWeather);
+setTimeout(() => {
+ getCity();
+}, "1 second");
 
 app.use('*', handleNotFound);
 app.use(handleError);
