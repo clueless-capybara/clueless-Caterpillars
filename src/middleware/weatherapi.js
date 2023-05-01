@@ -24,4 +24,6 @@ async function weatherAPI (request, response, next) {
   }
 }
 
+
+
 module.exports = weatherAPI;
