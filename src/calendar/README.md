@@ -1,3 +1,0 @@
-# clueless-capybara
-
-Team Agreement
