@@ -4,11 +4,9 @@ require('dotenv').config();
 // Find your Account SID and Auth Token at twilio.com/console
 // and set the environment variables. See http://twil.io/secure
 
-// const accountSid = process.env.TWILIO_ACCOUNT_SID;
-const accountSid = 'AC5ff50fe209968619d89ff0c206f5eb8b';
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
 
-// const authToken = process.env.TWILIO_AUTH_TOKEN;
-const authToken = 'c97c8077a444b0044ec89713263f0e3d';
+const authToken = process.env.TWILIO_AUTH_TOKEN;
 
 const client = require('twilio')(accountSid, authToken);
 
