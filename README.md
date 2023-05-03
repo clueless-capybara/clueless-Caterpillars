@@ -1,5 +1,9 @@
 # Clueless Caterpillar ![tm](/images/trademark2.png)
 
+## Contributions
+
+[![Contributors](https://img.shields.io/github/contributors/user/repo.svg)](https://github.com/user/repo/graphs/contributors)
+
 ![cluelessCaterpillars](/images/Logo.png)
 
 User story**
