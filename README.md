@@ -58,5 +58,7 @@ Distributed under the MIT License.
 ### Raspberry pi
 
 [temp probe](https://www.amazon.com/dp/B078SVZB1X?ref=ppx_pop_mob_ap_share)
+
 [raspberry pi info](https://projects.raspberrypi.org/en/projects/raspberry-pi-getting-started)
+
 [raspberry pi](https://www.amazon.com/ELEMENT-Element14-Raspberry-Pi-Motherboard/dp/B07P4LSDYV/ref=sr_1_4?crid=3LEAKDJZH0J07&keywords=raspberry+pi&qid=1683144620&sprefix=raspberry+pi%2Caps%2C164&sr=8-4)
