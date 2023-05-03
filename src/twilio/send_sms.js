@@ -6,7 +6,11 @@ require('dotenv').config();
 
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 
+console.log(accountSid);
+
 const authToken = process.env.TWILIO_AUTH_TOKEN;
+
+console.log(authToken);
 
 const client = require('twilio')(accountSid, authToken);
 
@@ -16,7 +20,7 @@ const WEATHERBIT_API_CONDITIONS = 'sunny';
 client.messages
   .create({
      body: `It's ${RPI_MEASURED_TEMPERATURE} degrees and ${WEATHERBIT_API_CONDITIONS} outside, clueless-caterpillar recommends wearing a light jacket and button-up shirt.`,
-     from: '+12062087730',
-     to: '+12064091159'
+     from: `+${process.env.TWILIO_PHONE_NUMBER}`,
+     to: `+${process.env.NATES_PHONE_NUMBER}`
    })
   .then(message => console.log(message.sid));
