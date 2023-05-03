@@ -6,8 +6,6 @@ const handleNotFound = require('./errorhandlers/400');
 
 const getCityForecast = require('./getCityForecast');
 const getWeatherAndEvents = require('./getWeatherAndEvents');
-
-const getCity = require('./getCityWeather')
 const Data = require('./models/mongoweather')
 
 const express = require('express');
@@ -23,7 +21,7 @@ app.get('/', (req, res, next) => {
 });
 
 
-app.use(getCityForecast)
+getWeatherAndEvents()
 
 // setTimeout(() => {
 //   getWeatherAndEvents();
@@ -33,9 +31,9 @@ app.post(Data.addWeather);
 app.delete(Data.deleteWeather);
 app.put(Data.updateWeather);
 
-setTimeout(() => {
- getCity();
-}, "1 second");
+// setTimeout(() => {
+//  getCity();
+// }, "1 second");
 
 
 app.use('*', handleNotFound);
