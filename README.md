@@ -52,10 +52,18 @@ Distributed under the MIT License.
 ### Resources
 
 [Mongodb](https://www.mongodb.com/)
+
 [AWS](https://aws.amazon.com/console/)
+
 [NPM](https://www.npmjs.com/package/npm)
 
-### Raspberry pi
+[Weatherbit](https://www.weatherbit.io/)
+
+[Google cloud](https://cloud.google.com/)
+
+[Twilio](https://www.twilio.com/en-us)
+
+### Raspberry pi [rasp](/images/raspberry2.png)
 
 [temp probe](https://www.amazon.com/dp/B078SVZB1X?ref=ppx_pop_mob_ap_share)
 
