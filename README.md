@@ -27,7 +27,7 @@ User story**
 
 > npm install jest, express, cors, moongoose, dotenv, nodemon, supertest, axios.
 
-### Installation
+### Installation ![gear](/images/gear.png)
 
 Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services.
 
