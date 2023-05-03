@@ -23,7 +23,6 @@ User story**
 
 ### Prerequisites
 
-> npm
->> npm install jest, express, cors, moongoose, dotenv, nodemon, supertest, axios.
->
+* npm
 
+> npm install jest, express, cors, moongoose, dotenv, nodemon, supertest, axios.
