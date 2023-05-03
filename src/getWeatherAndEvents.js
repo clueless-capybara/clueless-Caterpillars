@@ -57,3 +57,4 @@ async function getWeatherAndEvents(){
 
 
 module.exports = getWeatherAndEvents;
+
