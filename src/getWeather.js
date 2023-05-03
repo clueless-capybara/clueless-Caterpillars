@@ -45,7 +45,7 @@ async function getWeeklyWeather(city='seattle'){
       }
         
   } catch (err){
-    console.log(err)
+    console.log(err);
     };
 
   console.log(weeklyWeather);

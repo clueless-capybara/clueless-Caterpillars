@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.DB_URL, { useNewUrlParser: true, useUnifiedTopology: true });
+// mongoose.connect(process.env.DB_URL, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const weatherSchema = new mongoose.Schema({
   min_temp: String,
