@@ -1,3 +1,3 @@
-# clueless-capybara
+# clueless-caterpillars
 
-Team Agreement
+![cluelessCaterpillars](/images/Logo.png)
