@@ -51,7 +51,7 @@ The Predictify app is used to help anyone who needs a clothing recommendation ba
 Ever been on a vacation but forgot to check the weather before heading out? Need to plan your attire for an event?
 Want the perfect outfit to keep you comfortable at all times?
 
-### License
+### License ![license](/images/license.gif)
 
 Distributed under the MIT License.
 
