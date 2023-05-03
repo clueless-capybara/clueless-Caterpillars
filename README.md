@@ -1,3 +1,4 @@
+# Clueless Caterpillar ![tm](/images/trademark.png)
 
 ![cluelessCaterpillars](/images/Logo.png)
 
@@ -49,7 +50,7 @@ Want the perfect outfit to keep you comfortable at all times?
 
 Distributed under the MIT License.
 
-### Resources
+### Resources ![books](/images/books.png)
 
 [Mongodb](https://www.mongodb.com/)
 
