@@ -17,3 +17,13 @@ User story**
 ![google](/images/google.png)
 ![aws](/images/amazon-web-services.png)
 ![s3](/images/amazon-s3.png)
+![express](/images/node-js-48.png)
+
+## Getting Started
+
+### Prerequisites
+
+> npm
+>> npm install jest, express, cors, moongoose, dotenv, nodemon, supertest, axios.
+>
+
