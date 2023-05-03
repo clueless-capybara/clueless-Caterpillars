@@ -2,7 +2,7 @@
 
 ## Contributions
 
-[![Contributors](https://img.shields.io/github/contributors/user/repo.svg)](https://github.com/orgs/clueless-capybara/people)
+[![Contributors](https://github.com/orgs/clueless-capybara/people)](https://github.com/orgs/clueless-capybara/people)
 
 ![cluelessCaterpillars](/images/Logo.png)
 
