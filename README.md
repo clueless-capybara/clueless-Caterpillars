@@ -2,7 +2,8 @@
 
 ## Contributions
 
-[![Contributors](https://github.com/orgs/clueless-capybara/people)](https://github.com/orgs/clueless-capybara/people)
+[![GitHub contributors](https://img.shields.io/github/contributors/<username>/<repository>.svg)](https://github.com/orgs/clueless-capybara/people)
+
 
 ![cluelessCaterpillars](/images/Logo.png)
 
