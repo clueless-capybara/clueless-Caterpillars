@@ -63,7 +63,7 @@ Distributed under the MIT License.
 
 [Twilio](https://www.twilio.com/en-us)
 
-### Raspberry pi [rasp](/images/raspberry2.png)
+### Raspberry pi ![rasp](/images/raspberry2.png)
 
 [temp probe](https://www.amazon.com/dp/B078SVZB1X?ref=ppx_pop_mob_ap_share)
 
