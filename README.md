@@ -10,5 +10,10 @@ User story**
 
 ## Built with
 
-![js](/images/js.gif)
+![js](/images/javascript.gif)
 ![mongo](/images/mongo.png)
+![weather](/images/weather.png)
+![rasp](/images/raspberry.png)
+![google](/images/google.png)
+![aws](/images/amazon-web-services.png)
+![s3](/images/amazon-s3.png)
