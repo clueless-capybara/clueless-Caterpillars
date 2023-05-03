@@ -18,3 +18,4 @@ async function getWeatherNow (){
 }
 
 module.exports = getWeatherNow;
+// getWeatherNow()
