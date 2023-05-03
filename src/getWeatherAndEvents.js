@@ -8,7 +8,7 @@ const getClothes = require('./getClothes');
 
 async function getWeatherAndEvents(){
   let recommendation;
-
+  try{
     let forecastObject = await getWeather();
 
     let forecastedDates = [];
@@ -31,7 +31,7 @@ async function getWeatherAndEvents(){
       if (forecastedDates.includes(date)){
         let index = forecastedDates.indexOf(date);
         let weatherOfEvent = forecastObject[index];
-        console.log(weatherOfEvent);
+        // console.log(weatherOfEvent);
         
         //get high-temp and low-temp cloth recommendation:
         let clothesForHighTemp = getClothes.getClothesByTemp(weatherOfEvent['feelsLikeMax']);
@@ -43,16 +43,18 @@ async function getWeatherAndEvents(){
         What to wear for the event: ${clothesForEvent},
         What to wear for the high of the day: ${clothesForHighTemp},
         What to wear for the low of the day: ${clothesForLowTemp}`
-        
       }
-    };
+    } 
+
+  }catch(e){
+    console.log(e)
+  }
     
-    console.log(recommendation);
-    return recommendation
+    // console.log(recommendation);
+    return recommendation ||  'clueless caterpillar (c) sez look out your window, dumbass'
   }
 
 
 
 module.exports = getWeatherAndEvents;
 
-// getWeatherAndEvents()
