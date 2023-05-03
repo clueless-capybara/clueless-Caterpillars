@@ -55,4 +55,4 @@ async function getWeatherAndEvents(){
 
 module.exports = getWeatherAndEvents;
 
-getWeatherAndEvents()
+// getWeatherAndEvents()
