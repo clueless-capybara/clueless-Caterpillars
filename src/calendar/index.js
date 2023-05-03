@@ -84,10 +84,18 @@ async function listEvents(auth) {
     return;
   }
   console.log('Upcoming 10 events:');
+  let upcomingEvents = {};
   events.map((event, i) => {
     const start = event.start.dateTime || event.start.date;
     console.log(`${start} - ${event.summary}`);
+    upcomingEvents[start.substring(0, 10)]=event.summary
   });
+
+  console.log(upcomingEvents);
+  return upcomingEvents
 }
 
-authorize().then(listEvents).catch(console.error);
+module.exports = {
+  getCalendarEvents: authorize().then(listEvents).catch(console.error),
+}
+

@@ -1,7 +1,7 @@
 require('dotenv').config()
 const getWeeklyWeather = require('./getWeather.js');
 
-function getCityWeather() {
+function getCityForecast() {
   const readline = require('readline').createInterface({
     input: process.stdin,
     output: process.stdout
@@ -9,12 +9,14 @@ function getCityWeather() {
   
   readline.question('Input city: ', async city => {
     let result = await getWeeklyWeather(city)
-    console.log(result)
+    console.log('NEXT WEEK WEATHER ', result);
     readline.close();
+    return result;
   });
 }
 
-module.exports = getCityWeather;
+module.exports = getCityForecast;
+// getCityForecast();
 
 
 

@@ -3,8 +3,13 @@
 require('dotenv').config();
 const handleError = require('./errorhandlers/500');
 const handleNotFound = require('./errorhandlers/400');
+
+const getCityForecast = require('./getCityForecast');
+const getWeatherAndEvents = require('./getWeatherAndEvents');
+
 const getCity = require('./getCityWeather')
 const Data = require('./models/mongoweather')
+
 const express = require('express');
 const cors = require('cors');
 // const prompt = require('prompt-sync')();
@@ -17,6 +22,13 @@ app.get('/', (req, res, next) => {
   res.send('Server Live');
 });
 
+
+app.use(getCityForecast)
+
+// setTimeout(() => {
+//   getWeatherAndEvents();
+// }, "1 second");
+
 app.post(Data.addWeather);
 app.delete(Data.deleteWeather);
 app.put(Data.updateWeather);
@@ -24,6 +36,7 @@ app.put(Data.updateWeather);
 setTimeout(() => {
  getCity();
 }, "1 second");
+
 
 app.use('*', handleNotFound);
 app.use(handleError);
