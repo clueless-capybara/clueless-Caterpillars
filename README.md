@@ -5,7 +5,7 @@
 User story**
 
 
-## UML
+## UML 
 
 ![uml](/images/uml.png)
 
@@ -44,13 +44,13 @@ Below is an example of how you can instruct your audience on installing and sett
 
 The Predictify app is used to help anyone who needs a clothing recommendation based on the weather.
 Ever been on a vacation but forgot to check the weather before heading out? Need to plan your attire for an event?
-Want the perfect outfit to keep you comfortable at all times? 
+Want the perfect outfit to keep you comfortable at all times?
 
 ### License
 
 Distributed under the MIT License.
 
-### Resources ![books](/images/books.png)
+### Resources ![books](/images/books2.png)
 
 [Mongodb](https://www.mongodb.com/)
 
