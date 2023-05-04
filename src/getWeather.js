@@ -62,7 +62,7 @@ async function getWeeklyWeather(city = 'seattle') {
       weeklyWeather = await getWeatherNow();
     };
   }
-  console.log(weeklyWeather);
+  console.log('WEEKLY WEATHER ', weeklyWeather);
   return weeklyWeather;
 }
 
