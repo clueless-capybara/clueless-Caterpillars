@@ -23,7 +23,6 @@ function getClothesByTemp (temperature){
       }
     }
   }
-
 }
 
 function getClothesByEvent (event) {

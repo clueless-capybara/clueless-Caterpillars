@@ -13,12 +13,18 @@ describe('Should return an object with temperature, humidity, and timeStamp', ()
     expect(result.timeStamp).toBeTruthy();
   });
 
-  xtest('2. Get data from Weatherbit API', async ()=>{
+  test('2. Get data from Weatherbit API', async ()=>{
     let result = await getWeeklyWeather('seattle');
     let errResult = await getWeeklyWeather('')
     console.log(result)
     expect(result.length).toBeTruthy();
-    expect(errResult.length).toEqual(0);
+    expect(errResult['humidity']).toBeTruthy();
+  });
+
+  test('3. Get cached data from Weatherbit API if not expired', async ()=>{
+    await getWeeklyWeather('seattle');
+    console.log = jest.fn();
+    expect(console.log).toHaveBeenCalledWith('Cache hit');
   });
 
   test('3. Get clothes recommendations with a valid temperature', ()=>{
@@ -28,4 +34,5 @@ describe('Should return an object with temperature, humidity, and timeStamp', ()
     expect(getClothesByEvent('wedding').length).toBeTruthy();
     expect(getClothesByEvent('not-an-event')).not.toBeTruthy();
   });
+
 })
