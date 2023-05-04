@@ -3,7 +3,9 @@
 // require('dotenv').config();
 const axios = require('axios');
 
-const cache = require('./cache');
+const NodeCache = require('node-cache');
+const myCache = new NodeCache();
+
 const getWeatherNow = require('./getWeatherNow')
 
 async function getWeeklyWeather(city) {
@@ -23,15 +25,20 @@ async function getWeeklyWeather(city) {
   }
 
   let weeklyWeather = [];
-  const key = city + 'Data';
-  if (cache[key] && (Date.now() - cache[key].timestamp < 50000)) {
+  // const key = city + 'Data';
+
+  let cachedCities = myCache.keys();
+  console.log(cachedCities);
+  if (cachedCities.includes(city)) {
     console.log('Cache hit');
-    return cache[key].data;
+    let cachedCityResult = myCache.get(city);
+    console.log(cachedCityResult);
+    return cachedCityResult;
   }
 
   else {
     try {
-      console.log('CASH MISS')
+      console.log('CACHE MISS')
       let apiForecast = await axios(config);
       // console.log(apiForecast.data)
       for (let idx = 0; idx < apiForecast.data.data.length; idx++) {
@@ -54,9 +61,13 @@ async function getWeeklyWeather(city) {
         weeklyWeather.push(weatherData);
       }
 
-      cache[key] = {};
-      cache[key].timestamp = Date.now();
-      cache[key].data = weeklyWeather;
+      myCache.set(city, weeklyWeather, 86400000);
+      console.log(myCache.data);
+
+
+      // cache[key] = {};
+      // cache[key].timestamp = Date.now();
+      // cache[key].data = weeklyWeather;
     }
     catch (err) {
       console.log(err.data);
