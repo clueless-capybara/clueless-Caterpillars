@@ -25,9 +25,16 @@ app.use(cors());
 app.use(express.json());
 
 const handleSMS = async () => {
+
+  // for testing, save money for text-messages
+  let result = await getWeatherAndEvents();
+  console.log('SMS handled');
+  return result;
+
+
   let text = await getWeatherAndEvents();
   sendSMS(text);
-  // sendEmail(text);
+  sendEmail(text);
 
   if (typeof(text) !== 'string'){
     dbModel.create(
@@ -43,15 +50,6 @@ const handleSMS = async () => {
       message: 'It\s room temperature, under standard pressure, wear a light jacket'
     })
   }
-    // .then(data => {
-    //   console.log('successfully added to db')
-    //   res.status(202).send(data)
-    // })
-    // .catch(error => {
-    //   res.status(500).send(error)
-    // })
-
-  return text;
 }
 
 app.get('/getClothes', (req, res, next) => {
