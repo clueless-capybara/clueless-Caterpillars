@@ -20,7 +20,7 @@ Team Clueless Caterpillar has come up with a solution to help with everyday garm
 ![aws](/images/amazon-web-services.png)
 ![s3](/images/amazon-s3.png)
 ![express](/images/node-js-48.png)
-![Twilio](/images/twilio.png)
+![Twilio](/images/icons8-twilio-is-a-cloud-communications-platform-as-a-service-company-32.png)
 
 ## Getting Started
 
