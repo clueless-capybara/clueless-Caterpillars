@@ -3,10 +3,11 @@
 require('dotenv').config();
 const handleError = require('./errorhandlers/500');
 const handleNotFound = require('./errorhandlers/400');
-const sendSMS = require('./sms/sms_sends');
-const sendEmail = require('./email/sendEmail')
-const getWeatherAndEvents = require('./getWeatherAndEvents');
+
+// const getWeatherAndEvents = require('./getWeatherAndEvents');
 const getWeatherNow = require('./getWeatherNow');
+const {handleSMS, sendCurrentWeatherSMS} = require('./handleSMS')
+const getClothesNow = require('./getClothesNow');
 const dbModel = require('./database/model');
 const Data = require('./models/mongoweather')
 
@@ -24,38 +25,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const handleSMS = async () => {
-
-  // for testing, save money for text-messages
-  let result = await getWeatherAndEvents();
-  console.log('SMS handled');
-  return result;
-
-
-  let text = await getWeatherAndEvents();
-  const accountSid = process.env.TWILIO_ACCOUNT_SID;
-  const authToken = process.env.TWILIO_AUTH_TOKEN;  
-  const fromNumber = process.env.TWILIO_PHONE_NUMBER;
-  const toNumber = process.env.RECIPIENT_PHONE_NUMBER;
-  sendSMS(text, fromNumber, toNumber, accountSid, authToken);
-  sendEmail(text);
-
-  if (typeof(text) !== 'string'){
-    dbModel.create(
-      {
-        email: process.env.TEST_EMAIL,
-        message: text,
-      }
-    )
-  }
-  else {
-    dbModel.create({
-      email: process.env.TEST_EMAIL,
-      message: 'It\s room temperature, under standard pressure, wear a light jacket'
-    })
-  }
-}
-
 app.get('/getClothes', async (req, res, next) => {
   try {
     let sentMessages = await handleSMS();
@@ -66,7 +35,17 @@ app.get('/getClothes', async (req, res, next) => {
   }
 });
 
-app.post('/recommendation', (req, res, next) => {
+app.get('/getClothesNow', async (req, res, next) => {
+  try {
+    await sendCurrentWeatherSMS();
+    res.status(200).send('recommendations for current weather sent to user devices');
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+});
+
+app.post('/recomendation', (req, res, next) => {
   console.log(req.body);
   dbModel.create(req.body)
     .then(data => {

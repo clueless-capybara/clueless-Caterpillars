@@ -1,3 +1,5 @@
 # clueless-capybara
 
-Team Agreement
+## UML
+
+![Alt text](Clothing%20Recommendation%20App.png)

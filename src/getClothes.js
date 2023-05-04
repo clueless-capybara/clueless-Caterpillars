@@ -18,7 +18,7 @@ function getClothesByTemp (temperature){
     // console.log('middle range temp')
     for (let temp=30; temp < 101; temp +=10) {
       if (temperature-temp < 0){
-        console.log('MIDDLE RANGE TEMP, ', tempClothes[temp-10])
+        // console.log('MIDDLE RANGE TEMP, ', tempClothes[temp-10])
         return tempClothes[temp-10];
       }
     }

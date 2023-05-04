@@ -84,15 +84,17 @@ async function listEvents(auth) {
     return;
   }
   console.log('Upcoming 10 events:');
-  let upcomingEvents = {};
+  let allEvents = [];
   events.map((event, i) => {
+    let upcomingEvents = {};
     const start = event.start.dateTime || event.start.date;
     console.log(`${start} - ${event.summary}`);
-    upcomingEvents[start.substring(0, 10)]=event.summary
+    upcomingEvents[start.substring(0, 10)]=event.summary;
+    allEvents.push(upcomingEvents)
   });
 
-  console.log(upcomingEvents);
-  return upcomingEvents;
+  console.log(allEvents);
+  return allEvents
 }
 
 module.exports = {
