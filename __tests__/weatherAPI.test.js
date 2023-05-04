@@ -22,8 +22,8 @@ describe('Should return an object with temperature, humidity, and timeStamp', ()
   });
 
   test('3. Get cached data from Weatherbit API if not expired', async ()=>{
-    await getWeeklyWeather('seattle');
     console.log = jest.fn();
+    await getWeeklyWeather('seattle');
     expect(console.log).toHaveBeenCalledWith('Cache hit');
   });
 
