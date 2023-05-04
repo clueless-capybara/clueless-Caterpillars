@@ -1,5 +1,3 @@
-# clueless-Caterpillars
-
 # Clueless Caterpillar ![tm](/images/trademark2.png)
 
 ![cluelessCaterpillars](/images/Logo.png)
