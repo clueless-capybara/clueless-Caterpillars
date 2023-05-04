@@ -24,18 +24,6 @@ function sendSMS(text)   {
   })
   .then(message => console.log(message.sid));
 }
-  
-  // const RPI_MEASURED_TEMPERATURE = 65;
-  // const WEATHERBIT_API_CONDITIONS = 'sunny';
-  
-  // client.messages
-  //   .create({
-  //      body: `It's ${RPI_MEASURED_TEMPERATURE} degrees and ${WEATHERBIT_API_CONDITIONS} outside, clueless-caterpillar recommends wearing a light jacket and button-up shirt.`,
-  //      from: `+${process.env.TWILIO_PHONE_NUMBER}`,
-  //      to: `+${process.env.NATES_PHONE_NUMBER}`
-  //    })
-  //   .then(message => console.log(message.sid));
-// }
 
 module.exports = sendSMS;
 
