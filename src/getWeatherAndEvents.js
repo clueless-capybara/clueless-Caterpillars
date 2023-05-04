@@ -57,7 +57,8 @@ async function getWeatherAndEvents(){
     let currentTemp = (+weatherNow['temperature']*1.8+32).toFixed();
     let currentHumidity = (+weatherNow['humidity']).toFixed();
     let currentClothes = getClothes.getClothesByTemp(+currentTemp)
-    recommendation = `Clueless Caterpillar (c) sez look out your window, dumbass, the current temperature is ${currentTemp}F, with ${currentHumidity}% humidity. We recommend ${currentClothes[0]}, ${currentClothes[1]}, and ${currentClothes[2]}.`
+    recommendation = `Clueless Caterpillar (c) sez look out your window, dumbass! 
+    According to our reading at ${weatherNow['timeStamp']}, the current temperature is ${currentTemp}F, with ${currentHumidity}% humidity. We recommend ${currentClothes[0]}, ${currentClothes[1]}, and ${currentClothes[2]}.`
   }
     
     console.log(recommendation);
