@@ -1,6 +1,6 @@
 'use strict';
 
-// require('dotenv').config();
+require('dotenv').config();
 const axios = require('axios');
 
 const cache = require('./cache');
@@ -58,7 +58,7 @@ async function getWeeklyWeather(city = 'seattle') {
       cache[key].data = weeklyWeather;
     }
     catch (err) {
-      console.log(err.data);
+      console.log(err);
       weeklyWeather = await getWeatherNow();
     };
   }
