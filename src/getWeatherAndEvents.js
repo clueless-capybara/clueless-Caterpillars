@@ -1,11 +1,9 @@
 'use strict';
 
 // const getCityForecast = require('./getCityForecast');
-const getWeatherNow = require('./getWeatherNow')
 const getWeather = require('./getWeather');
 const getClothesNow = require('./getClothesNow');
 const { getCalendarEvents } = require('./calendar/index');
-const eventsClothes = require('./clothes-recommendation/event-clothes')
 const getClothes = require('./getClothes');
 const eventClothes = require('./clothes-recommendation/event-clothes');
 
