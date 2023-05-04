@@ -37,7 +37,7 @@ async function getWeatherAndEvents(){
         //get high-temp and low-temp cloth recommendation:
         let clothesForHighTemp = getClothes.getClothesByTemp(weatherOfEvent['feelsLikeMax']);
         let clothesForLowTemp = getClothes.getClothesByTemp(weatherOfEvent['feelsLikeMin']);
-        let clothesForEvent = getClothes.getClothesByEvent(eventsObject[date]);
+        let clothesForEvent = getClothes.getClothesByEvent(eventsObject[date].toLowerCase());
 
         recommendation = `Event of the day: ${eventsObject[date]},
         Weather of the day is between ${weatherOfEvent['minTemperature']} and ${weatherOfEvent['maxTemperature']},
