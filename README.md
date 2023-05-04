@@ -44,6 +44,16 @@ Below is an example of how you can instruct your audience on installing and sett
 
 ### Running tests
 
+Unit tests
+
+1. Text message sent to client
+2. Weather received from weatherbit io
+3. Receive s3 data
+4. Check cache data being used when applicable
+5. Clothes reccommendation with valid temp event
+6. Recommendation is properly being passed in as email body
+7. Email is being sent.
+
 ### Usage
 
 The Predictify app is used to help anyone who needs a clothing recommendation based on the weather.
