@@ -42,7 +42,7 @@ Below is an example of how you can instruct your audience on installing and sett
 6. npm i
 7. how do i start the process of getting notifications
 
-### Running tests
+### Running tests ![tests](/images/check.png)
 
 Unit tests
 
