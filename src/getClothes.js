@@ -14,10 +14,12 @@ function getClothesByTemp (temperature){
   }
 }
 
+
+// this function is broken and it sends undefined event clothes to the text message body
 function getClothesByEvent (event) {
   let eventList = Object.keys(eventClothes);
-  if (eventList.includes(event)){
-    console.log(eventClothes[event]);
+  if (eventList.includes(event.toLowerCase())){
+    console.log('getClothesByEvent returns ' + eventClothes[event]);
     return eventClothes[event];
   }
 }
@@ -26,6 +28,3 @@ module.exports = {
   getClothesByTemp,
   getClothesByEvent,
 }
-
-// getClothesByTemp(55)
-// getClothesByEvent('hi')

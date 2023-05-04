@@ -20,7 +20,7 @@ async function getWeatherAndEvents(){
 
     const eventObject = async () => {
       let result = await getCalendarEvents;
-      return result
+      return result;
     } 
     let eventsObject = await eventObject();
     let eventDates = Object.keys(eventsObject);
@@ -46,15 +46,12 @@ async function getWeatherAndEvents(){
       }
     } 
 
-  }catch(e){
-    console.log(e)
+  } catch(e) {
+    console.log('getWeatherAndEvents error report', e)
   }
     
     // console.log(recommendation);
-    return recommendation ||  'clueless caterpillar (c) sez look out your window, dumbass'
+    return recommendation || 'clueless caterpillar (c) sez look out your window, dumbass'
   }
 
-
-
 module.exports = getWeatherAndEvents;
-

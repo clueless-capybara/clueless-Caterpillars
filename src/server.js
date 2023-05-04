@@ -27,7 +27,7 @@ app.use(express.json());
 const handleSMS = async () => {
   let text = await getWeatherAndEvents();
   sendSMS(text);
-  sendEmail(text);
+  // sendEmail(text);
 
   if (typeof(text) !== 'string'){
     dbModel.create(
@@ -40,7 +40,7 @@ const handleSMS = async () => {
   else {
     dbModel.create({
       email: process.env.TEST_EMAIL,
-      message: 'it\s room temperature, under Standard pressure, wear a light jacket'
+      message: 'It\s room temperature, under standard pressure, wear a light jacket'
     })
   }
     // .then(data => {
@@ -50,12 +50,22 @@ const handleSMS = async () => {
     // .catch(error => {
     //   res.status(500).send(error)
     // })
+
+  return text;
 }
 
+app.get('/getClothes', (req, res, next) => {
+  try {
+    let sentMessages = handleSMS();
+    console.log('sent messages in getClothes request' + sentMessages);
+    res.status(200).send('recommendations sent to user devices');
+  } catch (error) {
+    console.error(error);
+  }
+  next();
+});
 
-app.get('/getClothes', handleSMS);
-
-app.post('/recomendation', (req, res, next) => {
+app.post('/recommendation', (req, res, next) => {
   console.log(req.body);
   dbModel.create(req.body)
     .then(data => {

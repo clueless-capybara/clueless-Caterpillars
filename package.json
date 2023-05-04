@@ -1,14 +1,14 @@
 {
-  "name": "clueless-capybara",
+  "name": "clueless-caterpillar",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --verbose --coverage --forceExit",
     "start": "node index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Miranda Lu, Kawika Miller, Arturo Valadez, Joel Myrtil, Nate Brown",
   "license": "ISC",
   "dependencies": {
     "@aws-sdk/client-s3": "^3.321.1",

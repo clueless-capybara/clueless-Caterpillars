@@ -92,7 +92,7 @@ async function listEvents(auth) {
   });
 
   console.log(upcomingEvents);
-  return upcomingEvents
+  return upcomingEvents;
 }
 
 module.exports = {
