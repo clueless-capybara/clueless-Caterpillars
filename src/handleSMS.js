@@ -46,7 +46,7 @@ const sendCurrentWeatherSMS = async () => {
   According to our reading at ${clothesNow['timeStamp']}, the current temperature is ${clothesNow['currentTemp']}F, with ${clothesNow['currentHumidity']}% humidity. We recommend ${currentClothes[0]}, ${currentClothes[1]}, and ${currentClothes[2]}.`
     console.log('SMS handled', msg);
     // return result;    // for testing, save money for text-messages
-    sendSMS(msg);
+    sendSMS(msg, process.env.TWILIO_PHONE_NUMBER, process.env.RECIPIENT_PHONE_NUMBER, process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
     sendEmail(msg);
 }
 
