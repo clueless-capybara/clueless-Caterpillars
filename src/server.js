@@ -33,7 +33,11 @@ const handleSMS = async () => {
 
 
   let text = await getWeatherAndEvents();
-  sendSMS(text);
+  const accountSid = process.env.TWILIO_ACCOUNT_SID;
+  const authToken = process.env.TWILIO_AUTH_TOKEN;  
+  const fromNumber = process.env.TWILIO_PHONE_NUMBER;
+  const toNumber = process.env.RECIPIENT_PHONE_NUMBER;
+  sendSMS(text, fromNumber, toNumber, accountSid, authToken);
   sendEmail(text);
 
   if (typeof(text) !== 'string'){
