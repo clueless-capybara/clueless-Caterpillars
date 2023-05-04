@@ -1,7 +1,7 @@
 'use strict';
 
 const sendSMS = require('./sms/sms_sends');
-const sendEmail = require('./email/sendEmail')
+const {sendEmail} = require('./email/sendEmail')
 const getWeatherAndEvents = require('./getWeatherAndEvents');
 const getClothesNow = require('./getClothesNow');
 const dbModel = require('./database/model');
@@ -14,6 +14,7 @@ const handleSMS = async () => {
       text.forEach(item => {return msg = msg +'\n' + item});
       console.log('SMS handled', msg);
       // return result;    // for testing, save money for text-messages
+
       sendSMS(msg, process.env.TWILIO_PHONE_NUMBER, process.env.RECIPIENT_PHONE_NUMBER, process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
       sendEmail(msg);
     }

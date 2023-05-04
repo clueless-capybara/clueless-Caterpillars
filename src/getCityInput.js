@@ -3,7 +3,7 @@
 require('dotenv').config()
 const getWeeklyWeather = require('./getWeather.js');
 
-function getCityForecast() {
+function getCityInput() {
   const readline = require('readline').createInterface({
     input: process.stdin,
     output: process.stdout
@@ -17,4 +17,5 @@ function getCityForecast() {
   });
 }
 
-module.exports = getCityForecast;
+module.exports = getCityInput;
+// getCityInput()

@@ -27,7 +27,7 @@ describe('Should return an object with temperature, humidity, and timeStamp', ()
     expect(console.log).toHaveBeenCalledWith('Cache hit');
   });
 
-  test('3. Get clothes recommendations with a valid temperature', ()=>{
+  test('3. Get clothes recommendations with a valid temperature or event', ()=>{
     expect(getClothesByTemp(86).length).toBeTruthy();
     expect(getClothesByTemp(100)).toEqual(getClothesByTemp(90));
     expect(getClothesByTemp(10)).toBeTruthy();
