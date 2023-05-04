@@ -22,7 +22,8 @@ async function getWeeklyWeather(city = 'seattle') {
 
   let weeklyWeather = [];
   const key = city + 'Data';
-  if (cache[key] && (Date.now() - cache[key].timestamp < 50000)) {
+  let cacheExpiration = 1000*60*60*12
+  if (cache[key] && (Date.now() - cache[key].timestamp < cacheExpiration)) {
     console.log('Cache hit');
     return cache[key].data;
   }
