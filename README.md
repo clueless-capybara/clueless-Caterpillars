@@ -8,7 +8,7 @@ Team Clueless Caterpillar has come up with a solution to help with everyday garm
 
 ## UML
 
-![uml](/images/uml.png)
+![uml](/images/uml-caterpillar.png)
 
 ## Built with
 
