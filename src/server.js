@@ -52,15 +52,14 @@ const handleSMS = async () => {
   }
 }
 
-app.get('/getClothes', (req, res, next) => {
+app.get('/getClothes', async (req, res, next) => {
   try {
-    let sentMessages = handleSMS();
-    console.log('sent messages in getClothes request' + sentMessages);
+    let sentMessages = await handleSMS();
     res.status(200).send('recommendations sent to user devices');
   } catch (error) {
     console.error(error);
+    next(error);
   }
-  next();
 });
 
 app.post('/recommendation', (req, res, next) => {
