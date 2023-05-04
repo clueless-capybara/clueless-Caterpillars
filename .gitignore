@@ -1,6 +1,7 @@
 .env
 testfile.js
 token.json
+xtoken.json
 credentials.json
 
 # Logs
