@@ -1,16 +1,12 @@
 # Clueless Caterpillar ![tm](/images/trademark2.png)
 
-## Contributions
-
-[![GitHub contributors](https://img.shields.io/github/contributors/<username>/<repository>.svg)](https://github.com/orgs/clueless-capybara/people)
-
-
 ![cluelessCaterpillars](/images/Logo.png)
 
-User story**
+## Problem Domain
 
+Team Clueless Caterpillar has come up with a solution to help with everyday garment solutions according to the current weather, future weather, and upcoming events.
 
-## UML 
+## UML
 
 ![uml](/images/uml.png)
 
@@ -44,6 +40,8 @@ Below is an example of how you can instruct your audience on installing and sett
 5. clone repo
 6. npm i
 7. how do i start the process of getting notifications
+
+### Running tests
 
 ### Usage
 
