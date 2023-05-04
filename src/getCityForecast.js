@@ -1,3 +1,5 @@
+'use strict';
+
 require('dotenv').config()
 const getWeeklyWeather = require('./getWeather.js');
 
@@ -16,8 +18,3 @@ function getCityForecast() {
 }
 
 module.exports = getCityForecast;
-// getCityForecast();
-
-
-
-

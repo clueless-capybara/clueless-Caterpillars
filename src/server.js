@@ -47,15 +47,23 @@ const handleSMS = async () => {
   else {
     dbModel.create({
       email: process.env.TEST_EMAIL,
-      message: 'it\s room temperature, under Standard pressure, wear a light jacket'
+      message: 'It\s room temperature, under standard pressure, wear a light jacket'
     })
   }
 }
 
+app.get('/getClothes', (req, res, next) => {
+  try {
+    let sentMessages = handleSMS();
+    console.log('sent messages in getClothes request' + sentMessages);
+    res.status(200).send('recommendations sent to user devices');
+  } catch (error) {
+    console.error(error);
+  }
+  next();
+});
 
-app.get('/getClothes', handleSMS);
-
-app.post('/recomendation', (req, res, next) => {
+app.post('/recommendation', (req, res, next) => {
   console.log(req.body);
   dbModel.create(req.body)
     .then(data => {
