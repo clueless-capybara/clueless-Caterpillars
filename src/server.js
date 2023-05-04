@@ -53,7 +53,14 @@ const handleSMS = async () => {
 }
 
 
-app.get('/getClothes', handleSMS);
+app.get('/getClothes', (req, res, next) => {
+  try{
+    handleSMS().then(res.status(200).send('SUCCESS'))
+  }
+  catch(e){
+    next(e)
+  }
+});
 
 app.post('/recomendation', (req, res, next) => {
   console.log(req.body);

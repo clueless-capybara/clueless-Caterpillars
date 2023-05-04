@@ -17,8 +17,8 @@ async function getWeatherAndEvents(){
     return result
   } 
 
-  let eventsObject = [ { '2023-05-05': 'interview' }, { '2023-05-06': 'dates' } ]
-  // let eventsObject = await eventObject();
+  // let eventsObject = [ { '2023-05-05': 'interview' }, { '2023-05-06': 'dates' } ]
+  let eventsObject = await eventObject();
   let eventDates = eventsObject.map(event => Object.keys(event)).flat();
   console.log('Event Dates, ', eventDates)
 
@@ -78,5 +78,5 @@ async function getWeatherAndEvents(){
 
 
 module.exports = getWeatherAndEvents;
-getWeatherAndEvents()
+// getWeatherAndEvents()
 
