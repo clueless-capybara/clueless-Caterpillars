@@ -45,7 +45,7 @@ async function getWeeklyWeather(req, res, next){
     console.log(err)
     };
 
-  console.log(weatherData);
+  console.log('getWeeklyWeather returns weatherData as ' + weatherData);
   return weatherData;
 }
 

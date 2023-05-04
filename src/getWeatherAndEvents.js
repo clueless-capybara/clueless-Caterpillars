@@ -3,9 +3,11 @@
 // const getCityForecast = require('./getCityForecast');
 const getWeatherNow = require('./getWeatherNow')
 const getWeather = require('./getWeather');
+const getClothesNow = require('./getClothesNow');
 const { getCalendarEvents } = require('./calendar/index');
-
+const eventsClothes = require('./clothes-recommendation/event-clothes')
 const getClothes = require('./getClothes');
+const eventClothes = require('./clothes-recommendation/event-clothes');
 
 async function getWeatherAndEvents(){
   let recommendation = [];
@@ -33,7 +35,10 @@ async function getWeatherAndEvents(){
     for (let date in eventDates){
       // if the dates of the events matches one of the dates being forecasted
       // get the forecast of the day
-      if (forecastedDates.includes(eventDates[date])){
+      let eventOfTheDay = Object.values(eventsObject[date]);
+      let eventClothesRecommendations = Object.keys(eventClothes);
+
+      if (forecastedDates.includes(eventDates[date]) && eventClothesRecommendations.includes(eventOfTheDay[0])){
         let index = forecastedDates.indexOf(eventDates[date]);
         let weatherOfEvent = forecastObject[index];
         // console.log(weatherOfEvent);
@@ -43,7 +48,6 @@ async function getWeatherAndEvents(){
         let clothesForLowTemp = getClothes.getClothesByTemp(weatherOfEvent['feelsLikeMin']);
 
         // let eventIndex = eventDates.indexOf(date);
-        let eventOfTheDay = Object.values(eventsObject[date]);
         let clothesForEvent = getClothes.getClothesByEvent(eventOfTheDay[0]);
 
         message = `Event of the day: ${eventOfTheDay},
@@ -62,20 +66,18 @@ async function getWeatherAndEvents(){
 }
 
   else{
-    let weatherNow = await getWeatherNow();
-    let currentTemp = (+weatherNow['temperature']*1.8+32).toFixed();
-    let currentHumidity = (+weatherNow['humidity']).toFixed();
-    let currentClothes = getClothes.getClothesByTemp(+currentTemp)
-    message = `Clueless Caterpillar (c) sez look out your window, dumbass! 
-    According to our reading at ${weatherNow['timeStamp']}, the current temperature is ${currentTemp}F, with ${currentHumidity}% humidity. We recommend ${currentClothes[0]}, ${currentClothes[1]}, and ${currentClothes[2]}.`
-    recommendation.push(message)
+    let clothesNow = await getClothesNow();
+    // let currentTemp = (+weatherNow['temperature']*1.8+32).toFixed();
+    // let currentHumidity = (+weatherNow['humidity']).toFixed();
+    let currentClothes = clothesNow['currentClothes'];
+    recommendation = `Clueless Caterpillar (c) sez look out your window, dumbass! 
+    According to our reading at ${clothesNow['timeStamp']}, the current temperature is ${clothesNow['currentTemp']}F, with ${clothesNow['currentHumidity']}% humidity. We recommend ${currentClothes[0]}, ${currentClothes[1]}, and ${currentClothes[2]}.`
+    // recommendation.push(message)
   }
     
     console.log(recommendation);
     return recommendation ||  'clueless caterpillar (c) sez look out your window, dumbass'
   }
-
-
 
 module.exports = getWeatherAndEvents;
 // getWeatherAndEvents()

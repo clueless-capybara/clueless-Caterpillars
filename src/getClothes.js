@@ -1,7 +1,7 @@
 'use strict';
 
 const tempClothes = require('./clothes-recommendation/temp-clothes');
-const eventClothes = require('./clothes-recommendation/event-clothes')
+const eventClothes = require('./clothes-recommendation/event-clothes');
 
 function getClothesByTemp (temperature){
   let recommendation;
@@ -28,8 +28,7 @@ function getClothesByTemp (temperature){
 
 function getClothesByEvent (event) {
   let eventList = Object.keys(eventClothes);
-  if (eventList.includes(event)){
-    console.log(eventClothes[event]);
+  if (eventList.includes(event)) {
     return eventClothes[event];
   }
 }
@@ -38,6 +37,3 @@ module.exports = {
   getClothesByTemp,
   getClothesByEvent,
 }
-
-// console.log(getClothesByTemp(10))
-// getClothesByEvent('wedding')
