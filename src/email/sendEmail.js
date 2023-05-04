@@ -41,15 +41,17 @@ const sendEmail = async (reccomendation) => {
 
   try {
     const response = await client.send(command);
-    console.log(response);
+    console.log(`Email successfully sent: `, reccomendation);
   }
   catch (err) {
-    console.log(err)
+    console.log('ERROR SENDING EMAIL: ', err)
+    throw new Error('Could not send email')
   }
 }
 
 // sendEmail();
 
 module.exports = {
-  sendEmail
+  sendEmail,
+  client
 }
