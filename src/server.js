@@ -49,10 +49,20 @@ const handleSMS = async () => {
     dbModel.create({
       email: process.env.TEST_EMAIL,
       message: 'It\s room temperature, under standard pressure, wear a light jacket'
+      message: 'It\s room temperature, under standard pressure, wear a light jacket'
     })
   }
 }
 
+app.get('/getClothes', async (req, res, next) => {
+  try {
+    let sentMessages = await handleSMS();
+    res.status(200).send('recommendations sent to user devices');
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+});
 app.get('/getClothes', async (req, res, next) => {
   try {
     let sentMessages = await handleSMS();
