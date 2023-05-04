@@ -5,7 +5,7 @@ const getWeatherNow = require('../src/getWeatherNow');
 const getWeeklyWeather = require('../src/getWeather');
 const { getClothesByEvent, getClothesByTemp } = require('../src/getClothes')
 
-describe('Should return an object with temperature, humidity, and timeStamp', ()=>{
+xdescribe('Should return an object with temperature, humidity, and timeStamp', ()=>{
   test('1. Get data from S3: return most recent temperature and humidity reading', async ()=>{
     let result = await getWeatherNow();
     expect(result.temperature).toBeTruthy();

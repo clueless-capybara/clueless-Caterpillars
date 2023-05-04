@@ -4,18 +4,28 @@ require('dotenv').config();
 
 // const getWeatherAndEvents = require('./../getWeatherAndEvents')
 
-function sendSMS(text)   {
-  const accountSid = process.env.TWILIO_ACCOUNT_SID;
-  const authToken = process.env.TWILIO_AUTH_TOKEN;  
+
+
+
+async function sendSMS(text, fromNumber, toNumber, sid, token)   {
+  const accountSid = sid;
+  const authToken = token;  
   const client = require('twilio')(accountSid, authToken);
 
-  client.messages
+  let body;
+ await client.messages
   .create({
     body: text,
-    from: `+${process.env.TWILIO_PHONE_NUMBER}`,
-    to: `+${process.env.RECIPIENT_PHONE_NUMBER}`
+    from: `+${fromNumber}`,
+    to: `+${toNumber}`
   })
-  .then(message => console.log(message.sid));
+  .then(message => {
+    body = message.body
+    console.log('MESSAGE ', message.body)
+    
+  });
+  console.log(body);
+  return body
 }
 
 module.exports = sendSMS;
