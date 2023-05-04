@@ -6,7 +6,9 @@ const axios = require('axios');
 const cache = require('./cache');
 const getWeatherNow = require('./getWeatherNow')
 
-async function getWeeklyWeather(city = 'seattle') {
+async function getWeeklyWeather(city) {
+
+// async function getWeeklyWeather(city = 'seattle') {
 
   //https://api.weatherbit.io/v2.0/forecast/daily?city=Raleigh,NC&key=API_KEY
   let config = {

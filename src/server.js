@@ -24,10 +24,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const handleSMS = async () => {
+const handleSMS = async (city) => {
 
   // for testing, save money for text-messages
-  let result = await getWeatherAndEvents();
+  let result = await getWeatherAndEvents(city);
   console.log('SMS handled');
   return result;
 
@@ -53,8 +53,10 @@ const handleSMS = async () => {
 }
 
 app.get('/getClothes', async (req, res, next) => {
+  console.log(req.query.city);
+  let city = req.query.city;
   try {
-    let sentMessages = await handleSMS();
+    let sentMessages = await handleSMS(city);
     res.status(200).send('recommendations sent to user devices');
   } catch (error) {
     console.error(error);

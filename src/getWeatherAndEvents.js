@@ -7,9 +7,9 @@ const { getCalendarEvents } = require('./calendar/index');
 
 const getClothes = require('./getClothes');
 
-async function getWeatherAndEvents(){
+async function getWeatherAndEvents(city){
   let recommendation;
-  let forecastObject = await getWeather();
+  let forecastObject = await getWeather(city);
   
   if (Array.isArray(forecastObject)){
   try{
@@ -38,6 +38,10 @@ async function getWeatherAndEvents(){
         let clothesForHighTemp = getClothes.getClothesByTemp(weatherOfEvent['feelsLikeMax']);
         let clothesForLowTemp = getClothes.getClothesByTemp(weatherOfEvent['feelsLikeMin']);
         let clothesForEvent = getClothes.getClothesByEvent(eventsObject[date].toLowerCase());
+
+// every time this loop runs, 'recommendation' gets overwritten
+// end result is the recommendation returned is for the LAST event in the calendar that matches the forecast dates
+// NOT CORRECT BEHAVIOR
 
         recommendation = `Event of the day: ${eventsObject[date]},
         Weather of the day is between ${weatherOfEvent['minTemperature']} and ${weatherOfEvent['maxTemperature']},
