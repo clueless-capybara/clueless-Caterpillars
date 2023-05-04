@@ -2,7 +2,7 @@
 
 ![cluelessCaterpillars](/images/Logo.png)
 
-## Problem Domain
+## Problem Domain ![goal](/images/goal.png)
 
 Team Clueless Caterpillar has come up with a solution to help with everyday garment solutions according to the current weather, future weather, and upcoming events.
 
@@ -54,7 +54,7 @@ Unit tests
 6. Recommendation is properly being passed in as email body
 7. Email is being sent.
 
-### Usage
+### Usage ![bulb](/images/bulb.png)
 
 The Predictify app is used to help anyone who needs a clothing recommendation based on the weather.
 Ever been on a vacation but forgot to check the weather before heading out? Need to plan your attire for an event?
