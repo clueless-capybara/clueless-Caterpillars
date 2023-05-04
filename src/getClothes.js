@@ -5,13 +5,25 @@ const eventClothes = require('./clothes-recommendation/event-clothes')
 
 function getClothesByTemp (temperature){
   let recommendation;
-
-  for (let temp=30; temp < 91; temp +=10) {
-    if (temperature-temp < 0){
-      console.log(tempClothes[temp-10])
-      return tempClothes[temp-10];
+  if((temperature-90) > 0){
+    recommendation = tempClothes[90];
+    return recommendation;
+  }
+  if(temperature-20< 0){
+    recommendation = 'We recommend you to move to a warmer place';
+    return recommendation;
+  }
+  
+  else{
+    // console.log('middle range temp')
+    for (let temp=30; temp < 101; temp +=10) {
+      if (temperature-temp < 0){
+        console.log('MIDDLE RANGE TEMP, ', tempClothes[temp-10])
+        return tempClothes[temp-10];
+      }
     }
   }
+
 }
 
 function getClothesByEvent (event) {
@@ -27,5 +39,5 @@ module.exports = {
   getClothesByEvent,
 }
 
-// getClothesByTemp(55)
-// getClothesByEvent('hi')
+// console.log(getClothesByTemp(10))
+// getClothesByEvent('wedding')

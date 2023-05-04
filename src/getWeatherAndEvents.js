@@ -1,6 +1,7 @@
 'use strict';
 
-const getCityForecast = require('./getCityForecast');
+// const getCityForecast = require('./getCityForecast');
+const getWeatherNow = require('./getWeatherNow')
 const getWeather = require('./getWeather');
 const { getCalendarEvents } = require('./calendar/index');
 
@@ -8,15 +9,15 @@ const getClothes = require('./getClothes');
 
 async function getWeatherAndEvents(){
   let recommendation;
+  let forecastObject = await getWeather();
+  
+  if (Array.isArray(forecastObject)){
   try{
-    let forecastObject = await getWeather();
-
     let forecastedDates = [];
     forecastObject.map( item => {
       forecastedDates.push(item['date']);
     });
     // console.log('FORECAST: ', forecastObject);
-
 
     const eventObject = async () => {
       let result = await getCalendarEvents;
@@ -47,10 +48,19 @@ async function getWeatherAndEvents(){
     } 
 
   }catch(e){
-    console.log(e)
+    console.log(e);
+  }
+}
+
+  else{
+    let weatherNow = await getWeatherNow();
+    let currentTemp = (+weatherNow['temperature']*1.8+32).toFixed();
+    let currentHumidity = (+weatherNow['humidity']).toFixed();
+    let currentClothes = getClothes.getClothesByTemp(+currentTemp)
+    recommendation = `Clueless Caterpillar (c) sez look out your window, dumbass, the current temperature is ${currentTemp}F, with ${currentHumidity}% humidity. We recommend ${currentClothes[0]}, ${currentClothes[1]}, and ${currentClothes[2]}.`
   }
     
-    // console.log(recommendation);
+    console.log(recommendation);
     return recommendation ||  'clueless caterpillar (c) sez look out your window, dumbass'
   }
 

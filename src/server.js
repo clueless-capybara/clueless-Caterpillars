@@ -25,6 +25,13 @@ app.use(cors());
 app.use(express.json());
 
 const handleSMS = async () => {
+
+  // for testing, save money for text-messages
+  let result = await getWeatherAndEvents();
+  console.log('SMS handled');
+  return result;
+
+
   let text = await getWeatherAndEvents();
   sendSMS(text);
   sendEmail(text);
@@ -43,13 +50,6 @@ const handleSMS = async () => {
       message: 'it\s room temperature, under Standard pressure, wear a light jacket'
     })
   }
-    // .then(data => {
-    //   console.log('successfully added to db')
-    //   res.status(202).send(data)
-    // })
-    // .catch(error => {
-    //   res.status(500).send(error)
-    // })
 }
 
 
