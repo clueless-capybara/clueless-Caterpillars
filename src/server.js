@@ -56,6 +56,9 @@ app.post('/recomendation', (req, res, next) => {
     })
 })
 
+app.get('/', (request, response, next) => {
+  response.status(200).send('Beanstalk Climbed! Great Job!');
+});
 
 app.post(Data.addWeather);
 app.delete(Data.deleteWeather);
