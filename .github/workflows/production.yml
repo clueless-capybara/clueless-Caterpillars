@@ -62,7 +62,7 @@ jobs:
           flags: 'g'
 
       - name: Beanstalk Deploy for app
-        uses: clueless-capybara/clueless-Caterpillars@v16
+        uses: clueless-capybara/clueless-Caterpillars
         with:
           aws_access_key: ${{secrets.ACCESS_KEY_ID}}
           aws_secret_key: ${{secrets.SECRET_ACCESS_KEY}}
