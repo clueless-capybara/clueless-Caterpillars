@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --verbose --coverage",
     "start": "node index.js",
-    "build": "npm run build"
+    "build": "npm install"
   },
   "keywords": [],
   "author": "Miranda Lu, Kawika Miller, Arturo Valadez, Joel Myrtil, Nate Brown",
