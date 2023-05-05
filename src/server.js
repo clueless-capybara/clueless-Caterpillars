@@ -14,7 +14,6 @@ const Data = require('./models/mongoweather')
 const express = require('express');
 const cors = require('cors');
 
-
 const mongoose = require('mongoose');
 mongoose.connect(process.env.DB_URL, { useNewUrlParser: true, useUnifiedTopology: true },
   console.log('Mongoose is connected')

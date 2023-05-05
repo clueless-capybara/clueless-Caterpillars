@@ -13,7 +13,7 @@ async function getWeatherNow (){
   let weatherData = await response.Body.transformToString();
   weatherData = JSON.parse(weatherData)
   
-  console.log('weather data from getWeatherNow is ' + weatherData);
+  // console.log('weather data from getWeatherNow is ' + weatherData);
   return weatherData;
 }
 

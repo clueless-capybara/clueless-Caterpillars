@@ -13,7 +13,7 @@ const sendEmail = async (reccomendation) => {
     FromEmailAddressIdentityArn: process.env.AWS_EMAIL_ARN,
     Destination: { // Destination
       ToAddresses: [ // EmailAddressList
-        "kmillerartwork@gmail.com",
+            process.env.TEST_EMAIL
       ],
     },
     ReplyToAddresses: [
