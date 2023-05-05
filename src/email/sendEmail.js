@@ -41,7 +41,7 @@ const sendEmail = async (reccomendation) => {
 
   try {
     const response = await client.send(command);
-    console.log(`Email successfully sent: `, reccomendation);
+    console.log(`EMAIL SUCCESSFULLY SENT: `, reccomendation);
   }
   catch (err) {
     console.log('ERROR SENDING EMAIL: ', err)

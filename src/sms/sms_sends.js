@@ -15,7 +15,7 @@ async function sendSMS(text, fromNumber, toNumber, sid, token) {
     })
     .then(message => {
       body = message.body
-      console.log('MESSAGE ', message.body)
+      console.log('TEXT MESSAGE SUCCESSFULLY SENT: ', message.body)
     });
   console.log(body);
   return body;

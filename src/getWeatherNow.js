@@ -1,5 +1,13 @@
 'use strict';
 
+const credentials = {
+  region: process.env.AWS_REGION,
+  credentials: {
+    accessKeyId: process.env.ACCESS_KEY_ID,
+    secretAccessKey: process.env.SECRET_ACCESS_KEY
+  }
+};
+
 const { S3Client, GetObjectCommand } = require("@aws-sdk/client-s3");
 const client = new S3Client();
 
