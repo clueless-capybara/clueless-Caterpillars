@@ -58,7 +58,7 @@ async function getWeeklyWeather(city = 'seattle') {
       cache[key].data = weeklyWeather;
     }
     catch (err) {
-      console.log(err);
+      console.log(err.message);
       weeklyWeather = await getWeatherNow();
     };
   }

@@ -15,7 +15,7 @@ describe('Should return an object with temperature, humidity, and timeStamp', ()
 
   test('2. Get data from Weatherbit API', async ()=>{
     let result = await getWeeklyWeather('seattle');
-    let errResult = await getWeeklyWeather('')
+    let errResult = await getWeeklyWeather('') //error expected
     console.log(result)
     expect(result.length).toBeTruthy();
     expect(errResult['humidity']).toBeTruthy();
