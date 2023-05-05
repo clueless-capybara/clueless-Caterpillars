@@ -101,3 +101,5 @@ module.exports = {
   getCalendarEvents: authorize().then(listEvents).catch(console.error),
 }
 
+
+// authorize().then(listEvents).catch(console.error);
