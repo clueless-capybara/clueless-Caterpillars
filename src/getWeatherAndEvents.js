@@ -74,7 +74,7 @@ async function getWeatherAndEvents(){
   }
     
     console.log(recommendation);
-    return recommendation ||  'clueless caterpillar (c) sez look out your window, dumbass'
+    return recommendation ||  'clueless caterpillar (c) sez look out your window and see for yourself!'
   }
 
 module.exports = getWeatherAndEvents;

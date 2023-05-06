@@ -13,7 +13,7 @@ const sendEmail = async (reccomendation) => {
     FromEmailAddressIdentityArn: process.env.AWS_EMAIL_ARN,
     Destination: { // Destination
       ToAddresses: [ // EmailAddressList
-        "kmillerartwork@gmail.com",
+            process.env.TEST_EMAIL
       ],
     },
     ReplyToAddresses: [
@@ -41,7 +41,7 @@ const sendEmail = async (reccomendation) => {
 
   try {
     const response = await client.send(command);
-    console.log(`Email successfully sent: `, reccomendation);
+    console.log(`EMAIL SUCCESSFULLY SENT: `, reccomendation);
   }
   catch (err) {
     console.log('ERROR SENDING EMAIL: ', err)

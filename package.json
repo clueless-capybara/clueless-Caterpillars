@@ -5,14 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --verbose --coverage",
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "npm install"
   },
   "keywords": [],
   "author": "Miranda Lu, Kawika Miller, Arturo Valadez, Joel Myrtil, Nate Brown",
   "license": "ISC",
+  "engines": {
+    "node": "16.19.1"
+  },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.321.1",
+    "@aws-sdk/client-sesv2": "^3.321.1",
     "@google-cloud/local-auth": "^2.1.1",
+    "aws-sdk": "^2.1369.0",
     "axios": "^1.4.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
@@ -23,8 +29,6 @@
     "nodemon": "^2.0.22",
     "prompt-sync": "^4.2.0",
     "supertest": "^6.3.3",
-    "twilio": "^4.10.0",
-    "@aws-sdk/client-sesv2": "^3.321.1",
-    "aws-sdk": "^2.1369.0"
+    "twilio": "^4.10.0"
   }
 }

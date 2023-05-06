@@ -14,7 +14,6 @@ const Data = require('./models/mongoweather')
 const express = require('express');
 const cors = require('cors');
 
-
 const mongoose = require('mongoose');
 mongoose.connect(process.env.DB_URL, { useNewUrlParser: true, useUnifiedTopology: true },
   console.log('Mongoose is connected')
@@ -57,6 +56,9 @@ app.post('/recomendation', (req, res, next) => {
     })
 })
 
+app.get('/', (request, response, next) => {
+  response.status(200).send('Beanstalk Climbed! Great Job!');
+});
 
 app.post(Data.addWeather);
 app.delete(Data.deleteWeather);
